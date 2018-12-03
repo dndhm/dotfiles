@@ -27,6 +27,7 @@
   autosquash = true
 [include]
   path = ~/.gitconfig.local
+
 [diff]
   colorMoved = zebra
 	external = /Users/dan/bin/git-diff-cmd.sh
@@ -34,6 +35,7 @@
 	name = dndhm
 	email = dneedham@gmail.com
 	signingkey = 684A538E446926434F11E89C48CBE23052B60CEA
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
