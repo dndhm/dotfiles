@@ -46,3 +46,28 @@ _load_settings "$HOME/.zsh/configs"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+plugins=(bash git github npm sublime yarn)
+
+# Prevent `vault write` commands from being stored in history.
+function vault () {
+  command vault "$@"
+  if [[ $1 == write ]]; then history -d $((HISTCMD-1)) &> /dev/null; fi
+}
+
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="robbyrussell"
+COMPLETION_WAITING_DOTS="true"
+source $ZSH/oh-my-zsh.sh
+export SSH_KEY_PATH="~/.ssh/rsa_id"
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export SILENCE_RBENV_DEPRECATION=1
+export SEED_USER_PASSWORD=trailpass
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"

@@ -17,3 +17,22 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
+
+# Build tools
+alias tw="yarn test -- --watch"
+alias nuke="rm -rf"
+alias dev="yarn dev"
+alias start="npm start"
+
+#TRAILAPP
+alias rails-preprod="heroku run rails c --app=trail-app-preprod"
+alias rails-production="heroku run rails c --app=trail-app-production"
+
+rbtest() {
+  find spec | grep -i $1 | xargs rspec
+}
+# Run all rspec tests
+alias rbtests="rspec spec"
+alias rubo="rubocop -R -D ."
+alias rubox="rubocop -a -R -D ."
+alias startt="bin/rails s"
