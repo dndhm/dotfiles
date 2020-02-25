@@ -20,6 +20,7 @@
   ff = only
 [commit]
   template = ~/.gitmessage
+	gpgsign = true
 [fetch]
   prune = true
 [rebase]
@@ -28,11 +29,15 @@
   path = ~/.gitconfig.local
 [diff]
   colorMoved = zebra
+	external = /Users/dan/bin/git-diff-cmd.sh
 [user]
 	name = dndhm
 	email = dneedham@gmail.com
+	signingkey = 684A538E446926434F11E89C48CBE23052B60CEA
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[gpg]
+	program = /usr/local/MacGPG2/bin/gpg2

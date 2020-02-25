@@ -4,13 +4,10 @@ alias ln="ln -v"
 alias mkdir="mkdir -p"
 alias e="$EDITOR"
 alias v="$VISUAL"
+alias please="sudo"
 
 # Bundler
 alias b="bundle"
-
-# Rails
-alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
-alias s="rspec"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
@@ -19,20 +16,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
 
 # Build tools
-alias tw="yarn test -- --watch"
 alias nuke="rm -rf"
 alias dev="yarn dev"
 alias start="npm start"
-
-#TRAILAPP
-alias rails-preprod="heroku run rails c --app=trail-app-preprod"
-alias rails-production="heroku run rails c --app=trail-app-production"
-
-rbtest() {
-  find spec | grep -i $1 | xargs rspec
-}
-# Run all rspec tests
-alias rbtests="rspec spec"
-alias rubo="rubocop -R -D ."
-alias rubox="rubocop -a -R -D ."
-alias startt="bin/rails s"
+alias dangerpush="git push --no-verify --force"
